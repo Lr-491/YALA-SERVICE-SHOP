@@ -4,13 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!--=============== BOXICONS ===============-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
-
     <title>YALLA SERVICE SHOP</title>
     <link rel="icon" type="image/png" href="../images/favicon.jpeg" />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
     <link rel="stylesheet" href="../style/index.css" />
 </head>
 
@@ -18,83 +14,57 @@
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
         <nav class="nav">
-            <!-- LOGO -->
             <a href="index.html" class="nav__logo">
                 <img src="../images/logo.jpeg" alt="Logo Yalla Service" class="logo" />
             </a>
 
-            <!-- MENU -->
             <div class="nav_menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="../index.html" class="nav__link active-link">Home</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="./shop.html" class="nav__link">Shop</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="about.html" class="nav__link">About</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="contact.html" class="nav__link">Contact</a>
-                    </li>
+                    <li><a href="../index.html" class="nav__link active-link">Home</a></li>
+                    <li><a href="./shop.html" class="nav__link">Shop</a></li>
+                    <li><a href="./about.html" class="nav__link">About</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
                 </ul>
-
-                <!-- BOUTON FERMER -->
-                <div class="nav__close" id="nav-close">
-                    <i class="bx bx-x"></i>
-                </div>
+                <div class="nav__close" id="nav-close"><i class="bx bx-x"></i></div>
             </div>
 
-            <!-- BOUTONS À DROITE (USER / PANIER / BURGER) -->
             <div class="nav__btns">
-                <div class="login__toggle" id="login-button">
-                    <i class="bx bx-user"></i>
-                </div>
-
-                <div class="nav__shop" id="cart-shop">
-                    <i class="bx bx-shopping-bag"></i>
-                </div>
-
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="bx bx-grid-alt"></i>
-                </div>
+                <div class="login__toggle" id="login-button"><i class="bx bx-user"></i></div>
+                <div class="nav__shop" id="cart-shop"><i class="bx bx-shopping-bag"></i></div>
+                <div class="nav__toggle" id="nav-toggle"><i class="bx bx-grid-alt"></i></div>
             </div>
         </nav>
     </header>
 
     <main>
-        <!--=============== BANNIÈRE ===============-->
         <section class="baniereshop">
             <h1 class="title">YALLA SERVICE SHOP</h1>
             <p class="para1">La qualité branchée sur l'excellence</p>
-            <p class="para2">
-                Découvrez nos produits soigneusement sélectionnés pour répondre à vos besoins. <br>
-                Commandez dès maintenant et profitez de la qualité Yalla Service, livrée directement chez vous !
-            </p>
+            <p class="para2">Découvrez nos produits soigneusement sélectionnés pour répondre à vos besoins. <br>
+                Commandez dès
+                maintenant et profitez de la qualité Yalla Service, livrée directement chez vous !</p>
             <button class="btn">Commander</button>
         </section>
 
-        <section class="produit">
-            <h1>Nos Produits</h1>
-            <div id="product-container" class="product-container">
-                <!-- Les produits seront injectés ici via JavaScript -->
+        <!-- MODAL SECTION -->
+        <section class="modal hidden" id="modal">
+            <div class="modal__content">
+                <span class="close__btn">&times;</span>
+                <h2 id="modal__title"></h2>
+                <div id="change__saw"></div>
+                <div id="product__display"></div>
             </div>
         </section>
-        <!-- =============== HERO SECTION ===============
-        <section class="produits__section">
-            <div class="product-card">
-                <img src="images/pc1.jpg" alt="PC Gamer" class="product-img">
-                <h3>PC Gamer Ultra</h3>
-                <p>Processeur Intel i7, 16Go RAM, Carte graphique RTX 3060.</p>
-                <a href="https://wa.me/242053330615?text=Bonjour,%20je%20souhaite%20commander%20le%20PC%20Gamer%20Ultra"
-                    target="_blank" class="btn-order">
-                    Commander via WhatsApp
-                </a>
+
+        <section class="produit">
+            <div class="first__div">
+                <h1>Nos Produits</h1>
+                <section class="search-section">
+                    <input type="text" id="searchInput" placeholder="Rechercher un produit...">
+                </section>
             </div>
-        </section> -->
-
-
+            <div id="product-container" class="product-container"></div>
+        </section>
     </main>
 
     <!-- FOOTER -->
@@ -102,7 +72,7 @@
         <div class="footer-top">
             <!-- Colonne 1 : Logo -->
             <div class="footer-col">
-                <h2 class="footer-logo">YALA SERVICE Shop</h2>
+                <h2 class="footer-logo">YALA SERVICES Shop</h2>
                 <p class="footer-text">
                     Boutique spécialisée dans la vente d'outils electrobique et commercial.Qualité & service garantis.
                 </p>
@@ -112,9 +82,9 @@
             <div class="footer-col">
                 <h3 class="footer-title">Navigation</h3>
                 <ul class="footer-links">
-                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="index.html">Accueil</a></li>
                     <li><a href="about.html">À propos</a></li>
-                    <li><a href="./shop.html">Produits</a></li>
+                    <li><a href="./pages/shop.html">Produits</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -134,27 +104,9 @@
             <div class="footer-col">
                 <h3 class="footer-title">Suivez-nous</h3>
                 <div class="social-icons">
-                    <a href="#" aria-label="Facebook">
-                        <!-- Facebook SVG -->
-                        <svg fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M22 12a10 10 0 10-11.63 9.87v-6.99H8.1v-2.88h2.27V9.41c0-2.25 1.33-3.5 3.38-3.5.98 0 2 .17 2 .17v2.2h-1.13c-1.12 0-1.47.7-1.47 1.42v1.7h2.5l-.4 2.88h-2.1v6.99A10 10 0 0022 12z" />
-                        </svg>
-                    </a>
-                    <a href="#" aria-label="Instagram">
-                        <!-- Instagram SVG -->
-                        <svg fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm5 2a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.25a.75.75 0 100 1.5.75.75 0 000-1.5z" />
-                        </svg>
-                    </a>
-                    <a href="#" aria-label="WhatsApp">
-                        <!-- WhatsApp SVG -->
-                        <svg fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M20.52 3.48a12.17 12.17 0 00-17.24 0c-4.76 4.76-4.76 12.48 0 17.24L2 22l1.28-.44A12.15 12.15 0 0012 24c3.29 0 6.48-1.29 8.84-3.66a12.17 12.17 0 000-17.24zM12 22a9.95 9.95 0 01-5.32-1.52l-.38-.23-3.14 1.1 1.11-3.06-.24-.39A9.97 9.97 0 1122 12c0 5.52-4.48 10-10 10zm4.7-7.3c-.2-.1-1.17-.57-1.35-.64-.18-.07-.3-.1-.43.1-.12.2-.5.63-.61.76-.11.12-.23.14-.43.05-.2-.1-.85-.31-1.62-1a6.06 6.06 0 01-1.12-1.39c-.12-.2-.01-.3.09-.4.1-.1.2-.23.3-.34.1-.1.13-.17.2-.3.06-.12.03-.23-.01-.33-.05-.1-.43-1.03-.59-1.4-.15-.35-.3-.3-.43-.3h-.37c-.13 0-.34.05-.5.23s-.67.65-.67 1.57c0 .92.69 1.8.79 1.93.1.13 1.34 2.06 3.24 2.89.45.2.8.32 1.07.41.45.14.85.12 1.17.07.36-.05 1.1-.45 1.26-.89.16-.44.16-.82.11-.9-.05-.08-.18-.13-.38-.23z" />
-                        </svg>
-                    </a>
+                    <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class='bx bxl-whatsapp'></i></a>
                 </div>
             </div>
         </div>
@@ -163,8 +115,7 @@
         <div class="footer-dev">
             <h3>Conçu par</h3>
             <p><strong><em>Lawal-Rafiou</em></strong>, développeur freelance spécialisé en création de sites web (site
-                vitrine,
-                site e-commerce, applications web) et solutions digitales.</p>
+                vitrine, site e-commerce, applications web) et solutions digitales.</p>
             <ul class="footer-dev-links">
                 <li><a href="mailto:lrafiou491@gmail.com">📧 Email</a></li>
                 <li><a href="https://www.linkedin.com/in/rafiou-lawal-626211379/" target="_blank">🔗 LinkedIn</a></li>
@@ -179,83 +130,175 @@
 
     <!--=============== SCRIPT ===============-->
     <script>
-        const navMenu = document.getElementById('nav-menu');
-        const navToggle = document.getElementById('nav-toggle');
-        const navClose = document.getElementById('nav-close');
+        /* --- MENU NAVIGATION --- */
+        const navMenu = document.getElementById("nav-menu");
+        const navToggle = document.getElementById("nav-toggle");
+        const navClose = document.getElementById("nav-close");
 
-        // Ouvrir le menu
-        if (navToggle) {
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.add('show-menu');
-            });
-        }
+        if (navToggle) navToggle.addEventListener("click", () => navMenu.classList.add("show-menu"));
+        if (navClose) navClose.addEventListener("click", () => navMenu.classList.remove("show-menu"));
+        document.querySelectorAll(".nav__link").forEach(link => link.addEventListener("click", () => navMenu.classList.remove("show-menu")));
 
-        // Fermer le menu
-        if (navClose) {
-            navClose.addEventListener('click', () => {
-                navMenu.classList.remove('show-menu');
-            });
-        }
+        /* --- DONNÉES PRODUITS --- */
+        const products = [
+            {
+                name: "Nikon D5300",
+                description: "Capturez chaque instant avec une clarté époustouflante grâce au Nikon D5300.",
+                price: 440000,
+                img: "../images/Nikon_D5300/1.jpeg",
+                shap: [
+                    { shape: 'Vue gauche', img: '../images/Nikon_D5300/2.jpeg' },
+                    { shape: 'Vue droite', img: '../images/Nikon_D5300/3.jpeg' },
+                ]
+            },
+            {
+                name: "Nikon D3200",
+                description: "Capteur APS-C de 24,2 Mpx pour des images ultra nettes.",
+                price: 380000,
+                img: "../images/Nikon_D3200/1.jpeg",
+                shap: [
+                    { shape: 'Vue gauche', img: '../images/Nikon_D3200/2.jpeg' },
+                    { shape: 'Vue droite', img: '../images/Nikon_D3200/3.jpeg' },
+                ]
+            },
+            {
+                name: "Nikon D7500",
+                description: "Appareil photo puissant, rapide et précis, conçu pour capturer chaque instant.",
+                price: 700000,
+                img: "../images/Nikon_D7500/1.jpeg",
+                shap: [
+                    { shape: 'Vue gauche', img: '../images/Nikon_D7500/2.jpeg' },
+                    { shape: 'Vue droite', img: '../images/Nikon_D7500/3.jpeg' },
+                ]
+            },
+            {
+                name: "Machine à crème",
+                description: "",
+                price: 750000,
+                img: "../images/MACHINE/machien_creme.jpg"
+            },
+            {
+                name: "Machine à Popcorn",
+                description: "",
+                price: 90000,
+                img: "../images/MACHINE/machineçpop_corn.jpg"
+            },
+            {
+                name: "Machine à Poulet",
+                description: "",
+                price: 750000,
+                img: "../images/MACHINE/machine_poulet.jpg"
+            },
+            {
+                name: "PC portable lenovo",
+                description: "Lenovo l380 YOGA 8éme génération RAM 8GB écran digital 14 pouces SSD 256GB avec son stylo CPU 2.20 2.21",
+                price: 199000,
+                img: "../images/LENOVO/lenovo1.jpg"
+            },
+            {
+                name: "CANON EOS 800D",
+                description: "",
+                price: 750000,
+                img: "../images/CANON/1.jpg"
+            },
+            {
+                name: "HP ElitBook",
+                description: "",
+                price: 350000,
+                img: "../images/HP/1.jpg"
+            },
+        ];
 
-        // Fermer le menu quand on clique sur un lien
-        const navLinks = document.querySelectorAll('.nav__link');
-        navLinks.forEach(link =>
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('show-menu');
-            })
-        );
+        /* --- AFFICHAGE PRODUITS --- */
+        const container = document.getElementById("product-container");
+        const modal = document.getElementById('modal');
+        const closeModalBtn = document.querySelector('.close__btn');
+        const modalTitle = document.getElementById('modal__title');
+        const changeOption = document.getElementById('change__saw');
+        const productDisplay = document.getElementById('product__display');
 
-        // Liste des produits
-            const products = [
-                {
-                    name: "Nikon D5300",
-                    description: "Capturez chaque instant avec une clarté époustouflante grâce au Nikon D5300, un appareil photo reflex performant et facile à utiliser.",
-                    price: 440.000,
-                    img: "../images/Nikon_D5300/1.jpeg"
-                },
-                {
-                    name: "Nikon D3200",
-                    description: "Capteur APS-C de 24,2 Mpx pour des images ultra nettes.",
-                    price: 380.000,
-                    img: "../images/Nikon_D3200/1.jpeg"
-                },
-                {
-                    name: "Nikon D7500 ",
-                    description: "Appareil photo puissant, rapide et précis, conçu pour capturer chaque instant avec une qualité d’image exceptionnelle.",
-                    price: 700.000,
-                    img: "../images/Nikon_D7500/1.jpeg"
-                },
-            ];
-
-            // Fonction pour afficher les produits
-            const container = document.getElementById('product-container');
-
-            products.forEach((product, index) => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
+        function displayProducts(list) {
+            container.innerHTML = "";
+            list.forEach((product, index) => {
+                const card = document.createElement("div");
+                card.className = "product-card";
                 card.innerHTML = `
-                <img src="${product.img}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p>${product.description}</p>
-                <p class="price">${product.price.toLocaleString()} FCFA</p>
-                <label>Quantité :</label>
-                <input type="number" min="1" value="1" id="qty${index}">
-                <button class="btn-order" onclick="orderProduct(${index})">Commander via WhatsApp</button>
-            `;
+                    <img src="${product.img}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <p class="price">${product.price.toLocaleString()} FCFA</p>
+                    <label>Quantité :</label>
+                    <input type="number" min="1" value="1" id="qty${index}">
+                    <button class="open__modal" data-index="${index}">Voir plus ...</button>
+                    <button class="btn-order" onclick="orderProduct(${index})">
+                        <i class='bx bxl-whatsapp'></i> Commander via WhatsApp
+                    </button>
+                `;
                 container.appendChild(card);
             });
 
-            // Fonction pour générer le lien WhatsApp
-            function orderProduct(index) {
-                const product = products[index];
-                const qty = document.getElementById(`qty${index}`).value;
-                const phone = '242053330615'; // Numéro du vendeur
-                const message = `Bonjour, je souhaite commander ${qty} x ${product.name} (${product.description}) pour un total de ${qty * product.price} FCFA.`;
-                const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-                window.open(url, '_blank');
+            // Ajouter les événements d’ouverture du modal
+            document.querySelectorAll(".open__modal").forEach(btn => {
+                btn.addEventListener("click", (e) => {
+                    const index = e.target.getAttribute("data-index");
+                    openModal(products[index]);
+                });
+            });
+        }
+
+        displayProducts(products);
+
+        /* --- MODAL --- */
+        function openModal(product) {
+            modalTitle.textContent = product.name;
+            changeOption.innerHTML = "";
+            productDisplay.innerHTML = `
+                <img src="${product.img}" alt="${product.name}">
+                <p>${product.description}</p>
+            `;
+
+            if (product.shap && product.shap.length > 0) {
+                product.shap.forEach(s => {
+                    const button = document.createElement("button");
+                    button.textContent = s.shape;
+                    button.addEventListener("click", () => {
+                        productDisplay.innerHTML = `
+                            <img src="${s.img}" alt="${product.name}">
+                            <p>${s.shape}</p>
+                        `;
+                    });
+                    changeOption.appendChild(button);
+                });
             }
 
+            modal.classList.remove('hidden');
+        }
 
+        // Fermer le modal
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        /* --- FILTRE PRODUITS --- */
+        const searchInput = document.getElementById("searchInput");
+        searchInput.addEventListener("input", () => {
+            const query = searchInput.value.toLowerCase();
+            const filtered = products.filter(
+                p => p.name.toLowerCase().includes(query) || p.description.toLowerCase().includes(query)
+            );
+            displayProducts(filtered);
+        });
+
+        /* --- COMMANDE VIA WHATSAPP --- */
+        function orderProduct(index) {
+            const p = products[index];
+            const qty = document.getElementById(`qty${index}`).value;
+            const phone = "242053330615";
+            const total = qty * p.price;
+            const message = `Bonjour 👋, je souhaite commander ${qty} x ${p.name} (${p.description}) pour un total de ${total.toLocaleString()} FCFA.`;
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        }
     </script>
 </body>
 
