@@ -65,11 +65,11 @@
 
     <main>
         <!--=============== BANNIÈRE ===============-->
-        <section class="baniere">
+        <section class="baniereshop">
             <h1 class="title">YALLA SERVICE SHOP</h1>
             <p class="para1">La qualité branchée sur l'excellence</p>
             <p class="para2">
-                Découvrez nos produits soigneusement sélectionnés pour répondre à vos besoins.
+                Découvrez nos produits soigneusement sélectionnés pour répondre à vos besoins. <br>
                 Commandez dès maintenant et profitez de la qualité Yalla Service, livrée directement chez vous !
             </p>
             <button class="btn">Commander</button>
@@ -208,23 +208,23 @@
         // Liste des produits
             const products = [
                 {
-                    name: "Multimètre Digital",
-                    description: "Mesure de tension, courant et résistance.",
-                    price: 25000,
-                    img: "images/multimetre.jpg"
+                    name: "Nikon D5300",
+                    description: "Capturez chaque instant avec une clarté époustouflante grâce au Nikon D5300, un appareil photo reflex performant et facile à utiliser.",
+                    price: 440.000,
+                    img: "../images/Nikon_D5300/1.jpeg"
                 },
                 {
-                    name: "Oscilloscope Portable",
-                    description: "Pour analyse de signaux électriques.",
-                    price: 120000,
-                    img: "images/oscilloscope.jpg"
+                    name: "Nikon D3200",
+                    description: "Capteur APS-C de 24,2 Mpx pour des images ultra nettes.",
+                    price: 380.000,
+                    img: "../images/Nikon_D3200/1.jpeg"
                 },
                 {
-                    name: "Câbles et Connectiques",
-                    description: "Câbles de qualité pour tous types d'appareils.",
-                    price: 5000,
-                    img: "images/cables.jpg"
-                }
+                    name: "Nikon D7500 ",
+                    description: "Appareil photo puissant, rapide et précis, conçu pour capturer chaque instant avec une qualité d’image exceptionnelle.",
+                    price: 700.000,
+                    img: "../images/Nikon_D7500/1.jpeg"
+                },
             ];
 
             // Fonction pour afficher les produits
@@ -249,7 +249,7 @@
             function orderProduct(index) {
                 const product = products[index];
                 const qty = document.getElementById(`qty${index}`).value;
-                const phone = '242066342441'; // Numéro du vendeur
+                const phone = '242053330615'; // Numéro du vendeur
                 const message = `Bonjour, je souhaite commander ${qty} x ${product.name} (${product.description}) pour un total de ${qty * product.price} FCFA.`;
                 const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
                 window.open(url, '_blank');

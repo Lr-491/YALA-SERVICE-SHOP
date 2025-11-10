@@ -473,19 +473,41 @@ header {
 /* =========================================================
    Shop page DESIGN
 ========================================================= */
-main .produit h1 {
-  text-align: center;
-  margin-bottom: 30px;
+main .baniereshop {
+  width: 100%;
+  min-height: 200px;
+  background: url('../images/hand.jpg') center/cover no-repeat;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-main .produit .product-container {
+main .baniereshop .title {
+  color: #f1f1f1;
+  /* text-align: center; */
+  margin-bottom: 30px;
+}
+main .baniereshop p {
+  color: #f1f1f1;
+  /* text-align: center; */
+  margin-bottom: 30px;
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+main .produit {
+  padding: 50px;
+}
+
+main .product-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
 
-main .produit .product-card {
+main .product-card {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -494,10 +516,15 @@ main .produit .product-card {
   text-align: center;
 }
 
-main .produit .product-card img {
+main .product-card img {
   width: 100%;
   height: auto;
   border-radius: 5px;
+  object-fit: contain;
+}
+
+main .product-card img:hover {
+  scale: .8;
 }
 
 main .produit .product-card h3 {
