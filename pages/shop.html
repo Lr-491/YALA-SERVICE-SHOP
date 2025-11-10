@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 
     <title>YALLA SERVICE SHOP</title>
-    <link rel="icon" type="image/png" href="./images/favicon.jpeg" />
+    <link rel="icon" type="image/png" href="../images/favicon.jpeg" />
 
-    <link rel="stylesheet" href="./style/index.css" />
+    <link rel="stylesheet" href="../style/index.css" />
 </head>
 
 <body>
@@ -20,17 +20,17 @@
         <nav class="nav">
             <!-- LOGO -->
             <a href="index.html" class="nav__logo">
-                <img src="./images/logo.jpeg" alt="Logo Yalla Service" class="logo" />
+                <img src="../images/logo.jpeg" alt="Logo Yalla Service" class="logo" />
             </a>
 
             <!-- MENU -->
             <div class="nav_menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="index.html" class="nav__link active-link">Home</a>
+                        <a href="../index.html" class="nav__link active-link">Home</a>
                     </li>
                     <li class="nav__item">
-                        <a href="./pages/shop.html" class="nav__link">Shop</a>
+                        <a href="./shop.html" class="nav__link">Shop</a>
                     </li>
                     <li class="nav__item">
                         <a href="about.html" class="nav__link">About</a>
@@ -74,47 +74,26 @@
             </p>
             <button class="btn">Commander</button>
         </section>
-        <!--=============== HERO SECTION ===============-->
-        <section class="hero">
-            <div class="hero__content">
-                <div class="section__one">
-                    <h1 class="title">YALLA SERVICE SHOP</h1>
-                    <div class="underline"></div>
-                    <p class="para1">
-                        YALLA SERVICE SHOP est une boutique spécialisée dans la vente d'outils electrobique et commercial
-                        informatiques à Pointe-Noire.Découvrez nos articles exclusifs et profitez d’un service rapide et fiable.
-                        Cliquez sur “Commander” et vivez l’expérience Yalla Service dès aujourd’hui !
-                    </p>
-                </div>
-                <button class="btn">Commander maintenant</button>
-                <div class="section__two">
-                    <h2 class="second__title">Pourquoi choisir nos produits ?</h2>
-                    <p class="para2">
-                        Nous ne vendons pas simplement des appareils électroniques — nous offrons la tranquillité d’esprit.
-                        Tous nos produits sont testés, garantis et accompagnés d’un service client attentif, avant et après
-                        l’achat.
-                    </p>
-                </div>
+
+        <section class="produit">
+            <h1>Nos Produits</h1>
+            <div id="product-container" class="product-container">
+                <!-- Les produits seront injectés ici via JavaScript -->
             </div>
         </section>
-        <!--=============== section statistiques ou facts section ===============-->
-        <!-- Section Chiffres Clés -->
-        <section class="stats-section">
-            <div class="container">
-                <div class="stat">
-                    <h3 class="counter" data-target="1200">0</h3>
-                    <p>Clients satisfaits</p>
-                </div>
-                <div class="stat">
-                    <h3 class="counter" data-target="5">0</h3>
-                    <p>Années d’expérience</p>
-                </div>
-                <div class="stat">
-                    <h3 class="counter" data-target="350">0</h3>
-                    <p>Projets réalisés</p>
-                </div>
+        <!-- =============== HERO SECTION ===============
+        <section class="produits__section">
+            <div class="product-card">
+                <img src="images/pc1.jpg" alt="PC Gamer" class="product-img">
+                <h3>PC Gamer Ultra</h3>
+                <p>Processeur Intel i7, 16Go RAM, Carte graphique RTX 3060.</p>
+                <a href="https://wa.me/242053330615?text=Bonjour,%20je%20souhaite%20commander%20le%20PC%20Gamer%20Ultra"
+                    target="_blank" class="btn-order">
+                    Commander via WhatsApp
+                </a>
             </div>
-        </section>
+        </section> -->
+
 
     </main>
 
@@ -133,9 +112,9 @@
             <div class="footer-col">
                 <h3 class="footer-title">Navigation</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="../index.html">Accueil</a></li>
                     <li><a href="about.html">À propos</a></li>
-                    <li><a href="./pages/shop.html">Produits</a></li>
+                    <li><a href="./shop.html">Produits</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -226,26 +205,57 @@
             })
         );
 
-         const counters = document.querySelectorAll('.counter');
-            const speed = 200; // plus le nombre est grand, plus l'animation est rapide
+        // Liste des produits
+            const products = [
+                {
+                    name: "Multimètre Digital",
+                    description: "Mesure de tension, courant et résistance.",
+                    price: 25000,
+                    img: "images/multimetre.jpg"
+                },
+                {
+                    name: "Oscilloscope Portable",
+                    description: "Pour analyse de signaux électriques.",
+                    price: 120000,
+                    img: "images/oscilloscope.jpg"
+                },
+                {
+                    name: "Câbles et Connectiques",
+                    description: "Câbles de qualité pour tous types d'appareils.",
+                    price: 5000,
+                    img: "images/cables.jpg"
+                }
+            ];
 
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const count = +counter.innerText;
+            // Fonction pour afficher les produits
+            const container = document.getElementById('product-container');
 
-                    const increment = target / speed;
-
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count + increment);
-                        setTimeout(updateCount, 20);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-
-                updateCount();
+            products.forEach((product, index) => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                <img src="${product.img}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <p class="price">${product.price.toLocaleString()} FCFA</p>
+                <label>Quantité :</label>
+                <input type="number" min="1" value="1" id="qty${index}">
+                <button class="btn-order" onclick="orderProduct(${index})">Commander via WhatsApp</button>
+            `;
+                container.appendChild(card);
             });
+
+            // Fonction pour générer le lien WhatsApp
+            function orderProduct(index) {
+                const product = products[index];
+                const qty = document.getElementById(`qty${index}`).value;
+                const phone = '242066342441'; // Numéro du vendeur
+                const message = `Bonjour, je souhaite commander ${qty} x ${product.name} (${product.description}) pour un total de ${qty * product.price} FCFA.`;
+                const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+                window.open(url, '_blank');
+            }
+
+
     </script>
 </body>
 
