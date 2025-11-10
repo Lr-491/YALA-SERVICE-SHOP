@@ -1,0 +1,421 @@
+/* =========================================================
+   VARIABLES & TYPOGRAPHIE RESPONSIVE
+========================================================= */
+:root {
+  --body-font: "Poppins", sans-serif;
+  --body-color: #fff;
+  --text-color: #333;
+  --title-color: #111;
+  --primary-color: blue;
+
+  --biggest-font-size: 3rem;
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.75rem;
+
+  --font-medium: 500;
+  --font-bold: 700;
+
+  --transition: all 0.4s ease-in-out;
+}
+
+@media screen and (max-width: 992px) {
+  :root {
+    --biggest-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+  }
+}
+
+/* =========================================================
+   RESET DE BASE
+========================================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--body-color);
+}
+
+h1, h2, h3, h4 {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+ul { list-style: none; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; }
+
+button, input {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* =========================================================
+   HEADER & NAVIGATION
+========================================================= */
+header {
+  background-color: whitesmoke;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav__logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+/* ===== Menu principal ===== */
+.nav_menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 70%;
+  transition: var(--transition);
+}
+
+/* Menu mobile (caché par défaut) */
+.nav_menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+}
+
+.nav_menu.show-menu {
+  right: 0;
+}
+
+/* Boutons nav */
+.nav__link {
+  font-weight: var(--font-medium);
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+}
+
+.nav__link:hover,
+.nav__link.active-link {
+  color: var(--primary-color);
+}
+
+/* Boutons et icons */
+.nav__btns {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.nav__toggle,
+.nav__close {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav__toggle:hover,
+.nav__close:hover {
+  color: var(--primary-color);
+}
+
+/* Bouton de fermeture */
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* =========================================================
+   BANNIÈRE PRINCIPALE
+========================================================= */
+.baniere {
+  width: 100%;
+  min-height: 500px;
+  background: url('../images/back.png') center/cover no-repeat;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.baniere .title {
+  font-size: 3rem;
+  color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.baniere .para1 {
+  font-size: 1.8rem;
+  color: rgb(228, 56, 84);
+  margin-top: 1rem;
+}
+
+.baniere .para2 {
+  max-width: 700px;
+  padding: 0 20px;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #f1f1f1;
+  line-height: 1.6;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* =========================================================
+   BOUTON AVEC EFFET DE REMPLISSAGE
+========================================================= */
+.btn {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  padding: 1rem 2rem;
+  margin-top: 3rem;
+  margin-left: 80px;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  background: transparent;
+  color: #333;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  overflow: hidden;
+  transition: var(--transition);
+  z-index: 1;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background-color: var(--primary-color);
+  transform: translateX(-50%);
+  transition: width 0.4s ease;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.btn:hover {
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.hero {
+  width: 100%;
+  min-height: 80vh;
+  background: linear-gradient(to right, #ffffff, #f9f9f9);
+  color: #333;
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Conteneur global du texte */
+.hero__content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* TITRE PRINCIPAL */
+.hero .title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #111;
+  text-transform: uppercase;
+}
+
+/* Soulignement décoratif */
+.hero .underline {
+  width: 70px;
+  height: 5px;
+  background-color: rgb(228, 56, 84);
+  margin: 1rem auto 2rem;
+  border-radius: 3px;
+}
+
+/* PREMIER PARAGRAPHE */
+.hero .para1 {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  color: #555;
+  margin-bottom: -2rem;
+}
+
+/* SECOND TITRE */
+.hero .second__title {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* DEUXIÈME PARAGRAPHE */
+.hero .para2 {
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* BOUTON */
+.hero .btn {
+  width: 250px;
+  position: relative;
+  font-size: 1rem;
+  background: transparent;
+  color: #333;
+  border: 2px solid rgb(230, 224, 224);
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.hero .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background-color: rgb(228, 56, 84);
+  transform: translateX(-50%);
+  transition: width 0.4s ease;
+  z-index: -1;
+  border-radius: 30px;
+}
+
+.hero .btn:hover::before {
+  width: 100%;
+}
+
+.hero .btn:hover {
+  color: #fff;
+  border-color: rgb(228, 56, 84);
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+@media screen and (max-width: 768px) {
+  .nav_menu ul {
+    margin-top: 150px;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+
+  .nav__btns {
+    gap: 1rem;
+  }
+
+  .baniere .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .baniere .para1 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .btn {
+    margin-left: 0;
+    align-self: center;
+  }
+
+  /* Hero section */
+    .hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero .title {
+    font-size: 2rem;
+  }
+
+  .hero .second__title {
+    font-size: 1.5rem;
+  }
+
+  .hero .para1,
+  .hero .para2 {
+    font-size: 1rem;
+  }
+
+  .hero .btn {
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .nav_menu {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .nav__close,
+  .nav__toggle {
+    display: none;
+  }
+}
+
