@@ -388,7 +388,7 @@ header {
   /* FOOTER */
   /* Footer Général */
 .footer {
-  background-color: #1a1a1a;
+  background-color: rgb(228, 56, 84);
   color: #fff;
   margin-top: 80px;
   font-family: Arial, sans-serif;
@@ -695,6 +695,18 @@ main .produit .btn-order:hover {
   cursor: pointer;
   font-size: 20px;
 }
+
+
+.btnChange {
+  width: 100px;
+  height: 50px;
+  font-size: var(--normal-font-size);
+  background-color: green;
+  color: var(--body-color);
+  border-radius: 12px;
+  padding: 10px;
+}
+
 /* =========================================================
    ABOUT PAGE DESIGN
 ========================================================= */

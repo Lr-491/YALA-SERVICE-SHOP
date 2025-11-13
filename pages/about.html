@@ -23,15 +23,14 @@
                     <li><a href="../index.html" class="nav__link">Accueil</a></li>
                     <li><a href="./shop.html" class="nav__link">Shop</a></li>
                     <li><a href="./about.html" class="nav__link active-link">À propos</a></li>
-                    <li><a href="./contact.html" class="nav__link">Contact</a></li>
                 </ul>
                 <div class="nav__close" id="nav-close"><i class="bx bx-x"></i></div>
             </div>
-            <div class="nav__btns">
+            <!-- <div class="nav__btns">
                 <div class="login__toggle" id="login-button"><i class="bx bx-user"></i></div>
                 <div class="nav__shop" id="cart-shop"><i class="bx bx-shopping-bag"></i></div>
                 <div class="nav__toggle" id="nav-toggle"><i class="bx bx-grid-alt"></i></div>
-            </div>
+            </div> -->
         </nav>
     </header>
 
@@ -67,7 +66,7 @@
         </div>
 
         <div class="about-img">
-            <img src="../images/about-tech.jpg" alt="Technologie et innovation" />
+            <img src="../images/logo.jpeg" alt="Technologie et innovation" />
         </div>
     </section>
 
@@ -100,19 +99,68 @@
     </section>
 
     <!--=============== FOOTER ===============-->
-    <footer>
-        © 2025 YALLA SERVICE | Tous droits réservés
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-top">
+            <!-- Colonne 1 : Logo -->
+            <div class="footer-col">
+                <h2 class="footer-logo">YALA SERVICES Shop</h2>
+                <p class="footer-text">
+                    Boutique spécialisée dans la vente d'outils electrobique et commercial.Qualité & service garantis.
+                </p>
+            </div>
+    
+            <!-- Colonne 2 : Liens rapides -->
+            <div class="footer-col">
+                <h3 class="footer-title">Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="shop.html">Produits</a></li>
+                </ul>
+            </div>
+    
+            <!-- Colonne 3 : Coordonnées -->
+            <div class="footer-col">
+                <h3 class="footer-title">Contact</h3>
+                <ul class="footer-text">
+                    <li><strong>Adresse :</strong> commandez en ligne</li>
+                    <li><strong>Téléphone :</strong> (+242) 065350024 / / </li>
+                    <li><strong>Email :</strong> nathur.ash@gmail.com</li>
+                    <li><strong>Horaires :</strong> Lun - Sam : 08h00 a 17h00</li>
+                </ul>
+            </div>
+    
+            <!-- Colonne 4 : Réseaux sociaux -->
+            <div class="footer-col">
+                <h3 class="footer-title">Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class='bx bxl-whatsapp'></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Colonne 5 : Infos sur le concepteur -->
+        <div class="footer-dev">
+            <h3>Conçu par</h3>
+            <p><strong><em>Lawal-Rafiou</em></strong>, développeur freelance spécialisé en création de sites web (site
+                vitrine, site e-commerce, applications web) et solutions digitales.</p>
+            <ul class="footer-dev-links">
+                <li><a href="mailto:lrafiou491@gmail.com">📧 Email</a></li>
+                <li><a href="https://www.linkedin.com/in/rafiou-lawal-626211379/" target="_blank">🔗 LinkedIn</a></li>
+                <li><a href="https://github.com/Lr-491" target="_blank">🐙 GitHub</a></li>
+            </ul>
+        </div>
+    
+        <div class="footer-bottom">
+            © 2025 YALLA SERVICE Shop. Tous droits réservés.
+        </div>
     </footer>
 
-    <script>
-        // --- NAVIGATION MOBILE ---
-        const navMenu = document.getElementById("nav-menu");
-        const navToggle = document.getElementById("nav-toggle");
-        const navClose = document.getElementById("nav-close");
+    <script src"../js/main.js">
 
-        if (navToggle) navToggle.addEventListener("click", () => navMenu.classList.add("show-menu"));
-        if (navClose) navClose.addEventListener("click", () => navMenu.classList.remove("show-menu"));
-        document.querySelectorAll(".nav__link").forEach(link => link.addEventListener("click", () => navMenu.classList.remove("show-menu")));
     </script>
 </body>
 
