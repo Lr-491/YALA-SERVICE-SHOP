@@ -887,6 +887,12 @@ footer {
     padding: 0.8rem 1.8rem;
   }
 
+  main .product-card {
+  width: 400px;
+  text-align: left;
+}
+
+
   .footer-top {
     flex-direction: column;
     align-items: flex-start;

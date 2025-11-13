@@ -153,7 +153,7 @@ function displayProducts(list) {
             <p class="price">${product.price.toLocaleString()} FCFA</p>
             <label>Quantité :</label>
             <input type="number" min="1" value="1" id="qty${index}">
-            <button class="open__modal" data-index="${index}">Voir plus ...</button>
+            <button class="open__modal" data-index="${index}" style="width:150px; height:30px;borderRadius: 12px">Voir plus </button>
             <button class="btn-order" onclick="orderProduct(${index})">
                 <i class='bx bxl-whatsapp'></i> Commander via WhatsApp
             </button>
