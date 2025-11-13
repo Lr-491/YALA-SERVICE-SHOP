@@ -686,6 +686,7 @@ main .produit .btn-order:hover {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   width: 80%;
   max-width: 500px;
+  z-index: 1000;
 }
 
 .close__btn {
